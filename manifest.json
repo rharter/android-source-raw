@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Gitiles Raw",
+  "description": "Adds raw option for Gitiles view",
+  "version": "1.0",
+  "content_security_policy": "script-src 'self' https://developer.android.com; object-src 'self'",
+
+  "permissions": [
+    "tabs",
+    "*://android.googlesource.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://android.googlesource.com/*"],
+      "js": ["ref-inject-gitiles-raw.js"]
+    }
+  ]
+}
